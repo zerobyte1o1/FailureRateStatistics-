@@ -32,6 +32,7 @@ def deal_data(file_name):
     wb.save(rate_file_name)
 
 
+
 def init_excel():
     wb = openpyxl.Workbook()
     ws = wb.active
@@ -94,5 +95,8 @@ for excel_file in list_pwd:
         deal_data(f'集成提测_全部_{date}.xlsx')
     elif '预发布环境发版' in excel_file:
         deal_data(f'预发布环境发版_全部_{date}.xlsx')
+    elif '.gitignore' in excel_file:
+        pass
     else:
         print('无法识别文件:\t' + excel_file)
+print(f'统计完成，生成文件   {rate_file_name}')
